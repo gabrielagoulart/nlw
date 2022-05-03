@@ -55,7 +55,7 @@ header {
 
 header h4 {
     
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
 
     margin-bottom: 1.6rem;
@@ -160,7 +160,7 @@ nav {
     transform: translateX(-50%);
 }
 
-nav.wrapper {
+nav .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -169,6 +169,8 @@ nav.wrapper {
 nav.scroll {
     background: var(--primary-color);
     width: 100vw;
+    position: fixed;
+    top: 0;
 }
 
 nav.scroll svg:nth-child(1) path {
