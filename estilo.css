@@ -22,6 +22,10 @@
     --nav-height: 7.2rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     width: 100%;
@@ -53,9 +57,9 @@ section {
     padding-block: 10rem;
 }
 
-/*======= HEADER ==========*/
+/*======= HOME ==========*/
 
-header::before {
+#home::before {
     content: "";
     width: 100%;
     height: calc(108rem + var(--nav-height)) ;
@@ -68,12 +72,12 @@ header::before {
     z-index: -1;
 }
 
-header {
-    margin-top: calc(4.1rem + var(--nav-height));
+#home {
+    padding-top: calc(4.1rem + var(--nav-height));
 
 }
 
-header h4 {
+#home h4 {
     
     font-size: 1.4rem;
     color: var(--primary-color);
@@ -82,7 +86,7 @@ header h4 {
 
 }
 
-header h1 {
+#home h1 {
     font-size: 3.4rem;
     color: var(--headline);
     line-height: 130%;
@@ -91,7 +95,7 @@ header h1 {
     
 }
 
-header p {
+#home p {
     font-size: 1.8rem;
     line-height: 150%;
     font-weight: 400;
@@ -101,7 +105,7 @@ header p {
     
 }
 
-header button {
+#home button {
     background-color: var(--primary-color);
 
     border: none;
@@ -126,7 +130,7 @@ header button {
     margin-left: auto;
 }
 
-header img {
+#home img {
     width: 26.4rem;
     display: block;
     margin-inline: auto;
@@ -136,7 +140,7 @@ header img {
 
 
 
-.stats {
+#home .stats {
     width: 32.7rem;
     padding-block: 4rem;
     margin-inline: auto;
@@ -151,7 +155,7 @@ header img {
     gap: 6rem;
 }
 
-.stat h3 {
+#home .stat h3 {
     font-size: 4.8rem;
     color: var(--headline);
     line-height: 130%;
@@ -159,7 +163,7 @@ header img {
     margin-bottom: 0.4rem;
 }
 
-.stat p {
+#home .stat p {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.6rem;
@@ -178,6 +182,8 @@ nav {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    z-index: 100;
 }
 
 nav .wrapper {
@@ -216,7 +222,9 @@ body.menu-expanded > :not(nav) {
     display: none;
 }
 
-
+.menu {
+    transform: translateY(100%);
+}
 
 .menu,
 .close-menu,
@@ -232,7 +240,6 @@ body.menu-expanded .close-menu {
 }
 
 
-
 body.menu-expanded .menu {
     position: fixed;
     top: 0;
@@ -243,6 +250,11 @@ body.menu-expanded .menu {
     height: 100vh;
 
     padding-top: var(--nav-height);
+
+    transition: transform 300ms;
+    transform: translateY(0%);
+
+  
 }
 
 body.menu-expanded nav {
